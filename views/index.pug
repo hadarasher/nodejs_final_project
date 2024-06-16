@@ -1,5 +1,13 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+html
+  head
+    title= title
+  body
+    h1 Home Page
+    ul
+      li
+        a(href='/about') About the Team
+      li
+        a(href='/addcalories') Add Calorie Consumption
+      li
+        a(href='/report') Get Calorie Report
