@@ -3,12 +3,24 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const aboutRouter = require('./routes/about');
 
 var app = express();
+
+// connect to mongodb
+let uri = "mongodb+srv://hadarasher99:11aa22bb33cc@clusterasyncprog.dpxx2do.mongodb.net/?retryWrites=true&w=majority&appName=ClusterAsyncProg";
+mongoose.connect(uri)
+    .then(() => {
+      console.log("Connected To DB Sucessfully....")
+    })
+    .catch((err) => {
+      console.log(err)
+    })
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

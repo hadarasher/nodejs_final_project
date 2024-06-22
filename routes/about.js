@@ -16,12 +16,12 @@ const members= [
     }
 ]
 /* GET about the team page. */
-// router.get('/', function(req, res, next) {
-//     res.render('about', { title: 'About the Team' , members:members});
-// });
-
-router.get('/', (req, res)=> {
-    res.json({ title: 'About the Team' , members:members});
+router.get('/', function(req, res, next) {
+    res.render('about', { title: 'About the Team' , members:members});
 });
+
+// router.get('/', (req, res)=> {
+//     res.json({ title: 'About the Team' , members:members});
+// });
 
 module.exports = router;

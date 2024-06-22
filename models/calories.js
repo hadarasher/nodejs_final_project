@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const CloriesSchema = new Schema({
+const CaloriesSchema = new Schema({
     user_id: {
         type:String
     },
@@ -28,6 +28,6 @@ const CloriesSchema = new Schema({
     }
 });
 
-const calories = mongoose.model('Calories', CloriesSchema);
+const calories = mongoose.model('Calories', CaloriesSchema);
 
 module.exports = calories;
