@@ -26,8 +26,6 @@ const CaloriesSchema = new Schema({
     amount: {
         type: Number
     }
-});
+},{versionKey: false});
 
-const calories = mongoose.model('Calories', CaloriesSchema);
-
-module.exports = calories;
+module.exports = mongoose.model('calories', CaloriesSchema);
