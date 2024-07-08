@@ -8,6 +8,11 @@ router.get('/', async function(req, res, next) {
     const year = req.query.year;
     const month = req.query.month;
 
+    if (!user_id || !year || !month) {
+        // Render a default page or return a JSON response explaining the expected details
+        return res.status(400).json({ error: 'Please provide user_id, year, and month parameters.' });
+    }
+
     try{
         const categories = Calories.schema.path('category').enumValues;
         const report = {};
@@ -29,10 +34,12 @@ router.get('/', async function(req, res, next) {
 
         res.json(report);
     } catch(err) {
-        console.error("Error generatng report: ",err);
+        console.error("Error generating report: ",err);
         next(err);
     }
 });
+
+
 
 
 module.exports = router;
