@@ -1,3 +1,9 @@
+/*
+Developers:
+* Gal Kalev 318657632
+* Hadar Asher 207767005
+ */
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 

@@ -1,5 +1,11 @@
-var express = require('express');
-var router = express.Router();
+/*
+Developers:
+* Gal Kalev 318657632
+* Hadar Asher 207767005
+ */
+
+const express = require('express');
+const router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
