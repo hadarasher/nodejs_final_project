@@ -1,6 +1,6 @@
-var express = require('express');
-const users = require('../models/users');
-var router = express.Router();
+const express = require('express');
+const users = require('../models/users_data');
+const router = express.Router();
 
 
 /* GET users:id listing. */

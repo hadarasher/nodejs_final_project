@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const Categories = ['breakfast', 'lunch', 'dinner', 'other'];
+
 const CaloriesSchema = new Schema({
     user_id: {
         type:String
@@ -21,7 +23,8 @@ const CaloriesSchema = new Schema({
         type: String
     },
     category: {
-        type: String
+        type: String,
+        enum: Categories
     },
     amount: {
         type: Number
