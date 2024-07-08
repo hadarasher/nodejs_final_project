@@ -1,8 +1,14 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+/*
+Developers:
+* Gal Kalev 318657632
+* Hadar Asher 207767005
+ */
+
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -11,8 +17,9 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const aboutRouter = require('./routes/about');
 const addcaloriesRouter = require('./routes/addcalories');
+const reportRouter = require('./routes/report');
 
-var app = express();
+const app = express();
 
 // connect to mongodb
 let uri = "mongodb+srv://hadarasher99:11aa22bb33cc@clusterasyncprog.dpxx2do.mongodb.net/CaloriesManager?retryWrites=true&w=majority&appName=ClusterAsyncProg";
@@ -43,6 +50,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/about', aboutRouter);
 app.use('/addcalories',addcaloriesRouter);
+app.use('/report', reportRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

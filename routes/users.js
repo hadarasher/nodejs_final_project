@@ -1,6 +1,12 @@
-var express = require('express');
-const users = require('../models/users');
-var router = express.Router();
+/*
+Developers:
+* Gal Kalev 318657632
+* Hadar Asher 207767005
+ */
+
+const express = require('express');
+const users = require('../models/users_data');
+const router = express.Router();
 
 
 /* GET users:id listing. */
@@ -27,7 +33,7 @@ router.get('/:id', async function(request,response){
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('this is users page');
+  return res.status(400).json({ error: 'To get user information please provide /id.' });
 });
 
 module.exports = router;

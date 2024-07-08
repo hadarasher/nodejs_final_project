@@ -1,4 +1,7 @@
-// views/addcalories.pug
+//-
+    Developers:
+    * Gal Kalev 318657632
+    * Hadar Asher 207767005
 
 doctype html
 html(lang="en")
@@ -30,7 +33,11 @@ html(lang="en")
             br
 
             label(for="category") Category:
-            input(type="text", name="category", id="category", required)
+            select(name="category", id="category", required)
+                option(value="breakfast") Breakfast
+                option(value="lunch") Lunch
+                option(value="dinner") Dinner
+                option(value="other") Other
             br
 
             label(for="amount") Amount:

@@ -1,5 +1,13 @@
+/*
+Developers:
+* Gal Kalev 318657632
+* Hadar Asher 207767005
+ */
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+
+const Categories = ['breakfast', 'lunch', 'dinner', 'other'];
 
 const CaloriesSchema = new Schema({
     user_id: {
@@ -21,7 +29,8 @@ const CaloriesSchema = new Schema({
         type: String
     },
     category: {
-        type: String
+        type: String,
+        enum: Categories
     },
     amount: {
         type: Number
